@@ -1,6 +1,4 @@
-import { ReactNode } from 'react';
-
-
+import { ReactNode } from "react";
 import {
   Home,
   LayoutGrid,
@@ -11,10 +9,6 @@ import {
   Settings,
   LogOut,
 } from "lucide-react";
-
-
-
-
 
 interface NavigationItem {
   name: string;
@@ -61,50 +55,44 @@ interface CardItem {
   price: string;
 }
 
-
 export const navigationList: NavigationItem[] = [
   {
     name: "Home",
-    icon: <Home className="group-hover:stroke-[#4F80E1] stroke-[#637381]" />,
+    icon: <Home />,
   },
   {
     name: "Dashboard",
-    icon: (
-      <LayoutGrid className="group-hover:stroke-[#4F80E1] stroke-[#637381]" />
-    ),
+    icon: <LayoutGrid />,
   },
   {
     name: "Products",
-    icon: <Package className="group-hover:stroke-[#4F80E1] stroke-[#637381]" />,
+    icon: <Package />,
   },
   {
     name: "Customer",
-    icon: <Users className="group-hover:stroke-[#4F80E1] stroke-[#637381]" />,
+    icon: <Users />,
   },
   {
     name: "Order",
-    icon: (
-      <ShoppingCart className="group-hover:stroke-[#4F80E1] stroke-[#637381]" />
-    ),
+    icon: <ShoppingCart />,
   },
   {
     name: "Documents",
-    icon: <Boxes className="group-hover:stroke-[#4F80E1] stroke-[#637381]" />,
+    icon: <Boxes />,
   },
 ];
 
 export const footerNavigation: NavigationItem[] = [
   {
     name: "Settings",
-    icon: (
-      <Settings className="group-hover:stroke-[#4F80E1] stroke-[#637381]" />
-    ),
+    icon: <Settings />,
   },
   {
     name: "Log out",
-    icon: <LogOut className="group-hover:stroke-[#4F80E1] stroke-[#637381]" />,
+    icon: <LogOut />,
   },
 ];
+
 
 export const people: DropdownItem[] = [
   { name: "This weekly" },
@@ -120,8 +108,8 @@ export const graphDropdown: DropdownItem[] = [
 ];
 
 export const resultDropdown: DropdownItem[] = [
-  { name: "Full Result" }, 
-  { name: "Quarterly Results" }
+  { name: "Full Result" },
+  { name: "Quarterly Results" },
 ];
 
 export const TableData: TableItem[] = [

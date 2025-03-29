@@ -1,30 +1,37 @@
 import React from "react";
+import { CardItem } from "@/app/types";
 
-const Cards = ({ cardData }: { cardData: any[] }) => {
+interface CardsProps {
+  cardData: CardItem[];
+}
+
+const Cards: React.FC<CardsProps> = ({ cardData }) => {
   return (
     <>
-      {cardData?.map((data, key) => (
+      {cardData.map((card, index) => (
         <div
-          className="p-5 xl:col-span-3 bg-white flex flex-col max-w-xs 2xl:max-w-none w-full rounded-xl gap-2 border border-[#E7E7E7] hover:shadow-xl cursor-pointer"
-          key={key}
+          key={index}
+          className="px-4 py-4 bg-white flex flex-col gap-4 xl:col-span-3 rounded-xl border border-[#E7E7E7]"
         >
-          <div className="flex justify-between sm:flex-row">
-            <span className="text-[#637381] text-sm font-medium">
-              {data?.type}
+          <div className="flex justify-between items-center">
+            <span className="text-[#637381] text-sm font-normal">
+              {card.type}
             </span>
-            <div className="flex gap-1 items-center">
-              <span className="">{data?.percentage}</span>
-              <img src={data?.arrow} alt="graph" />
+            <div className="flex items-center gap-1">
+              <img src={card.arrow} alt="arrow" />
+              <span className="text-[#10B860] text-sm font-medium">
+                {card.percentage}
+              </span>
             </div>
           </div>
-          <div className="flex gap-4 justify-between flex-nowrap items-center">
-            <span className="text-2xl font-bold whitespace-nowrap">
-              {data?.price}
+          <div className="flex justify-between items-end">
+            <span className="text-[#212B36] text-2xl font-semibold">
+              {card.price}
             </span>
-            <img src={data?.graph} alt="graph" />
+            <img src={card.graph} alt="graph" />
           </div>
         </div>
-      ))}{" "}
+      ))}
     </>
   );
 };
