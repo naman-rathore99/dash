@@ -584,7 +584,7 @@ const cardData = [
   },
 ];
 
-const DropDowns = ({ list }) => {
+const DropDowns = ({ list }: { list: { name: string }[] }) => {
   const [selected, setSelected] = useState(list[0]);
   return (
     <Listbox value={selected} onChange={setSelected}>
@@ -644,7 +644,6 @@ const DropDowns = ({ list }) => {
     </Listbox>
   );
 };
-
 const Dashbord = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [openSideBar, setOpenSieBar] = useState(true);
@@ -800,7 +799,7 @@ const Dashbord = () => {
         <div className="w-full flex flex-col">
          <Navbar/>
           <div className="w-full py-3 pl-7 pr-5 grid xl:grid-cols-12 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 justify-start">
-            <Cards data={cardData} key={}/>
+            <Cards cardData={cardData} />
             <div className="px-4 pt-4 pb-7 bg-white flex-col gap-1 justify-between  w-full max-h-64 xl:col-span-3 xl:row-start-2 lg:row-start-3 rounded-xl border border-[#E7E7E7]">
               <span className="text-[#212B36] text-base font-semibold -tracking-[0.15px]">
                 Customer Volume
